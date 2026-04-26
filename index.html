@@ -4,60 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Aki</title>
-    <style>
+   <style>
   body {
-    background-color: #fce4ec; /* Soft pink */
+    background-color: #fce4ec; /* Your original pink */
     margin: 0;
     padding: 0;
-    display: flex; /* This centers everything */
+    display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; /* This stops the phone from wobbling left to right */
   }
 
   .scroll-wrapper {
     position: relative;
-    padding: 100px 20px;
-    display: flex;
-    justify-content: center;
     width: 100%;
+    max-width: 600px; /* Keeps the letter centered */
+    margin: 100px auto;
+    padding: 20px;
   }
 
   .handmade-letter {
     background: #fff;
     padding: 50px 40px;
-    width: 90%;
-    max-width: 600px; /* Limits width on big screens */
+    width: 100%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: relative;
     z-index: 2;
-    border-radius: 2px;
   }
 
-  /* These are your photos/flowers - we will keep them simple */
-  .her, .fl { position: absolute; z-index: 3; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-  .her { width: 150px; }
-  .fl { width: 100px; border: none; box-shadow: none; }
+  /* The "Messy" Photo Style */
+  .her { 
+    position: absolute; 
+    width: 150px; 
+    z-index: 3; 
+    border: 5px solid #fff; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+  }
 
-  /* Desktop positions (The original "messy" look) */
+  /* The "Messy" Flower Style */
+  .fl { 
+    position: absolute; 
+    width: 100px; 
+    z-index: 4; 
+  }
+
+  /* Back to Original Positions */
   .h1 { right: -130px; top: -20px; transform: rotate(5deg); }
   .h2 { left: -130px; top: 250px; transform: rotate(-5deg); }
   .h3 { right: -130px; top: 500px; transform: rotate(3deg); }
-  
-  /* Mobile Fix: This ONLY triggers on phones */
-  @media (max-width: 800px) {
-    .scroll-wrapper { padding: 50px 10px; }
-    .her, .fl { 
-      position: static; /* This pulls them out of the margins */
-      display: block;
-      margin: 20px auto; /* Centers them above/below the letter */
-      width: 80%; 
-      max-width: 250px;
-      transform: rotate(0deg); 
-    }
-    .handmade-letter { width: 100%; padding: 30px 20px; }
+  .h4 { left: -130px; bottom: -50px; transform: rotate(-8deg); }
+
+  /* Flower Positions */
+  .f1 { left: -50px; top: -30px; }
+  .f2 { right: -40px; top: 150px; }
+  /* Add more if you had them */
+
+  /* Simple Mobile Fix that doesn't ruin the messiness */
+  @media (max-width: 600px) {
+    .h1, .h3 { right: -20px; } /* Pulls them in just enough to see them */
+    .h2, .h4 { left: -20px; }  /* Pulls them in just enough to see them */
+    .handmade-letter { padding: 30px 20px; width: 85%; margin: 0 auto; }
   }
 </style>
 </head>
