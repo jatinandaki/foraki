@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Aki</title>
-  <style>
-  /* Import a real Typewriter font */
+ <style>
   @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
   body {
@@ -34,14 +33,12 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: relative;
     z-index: 2;
-    /* Typewriter Font Fix */
     font-family: 'Special Elite', 'Courier New', Courier, monospace;
     font-size: 1.1rem;
     line-height: 1.6;
     color: #333;
   }
 
-  /* No white boxes around photos */
   .her { 
     position: absolute; 
     width: 150px; 
@@ -54,33 +51,34 @@
     position: absolute; 
     width: 100px; 
     z-index: 4; 
+    pointer-events: none;
   }
 
-  /* Desktop "Messy" Positions */
+  /* Desktop Positions */
   .h1 { right: -130px; top: -20px; transform: rotate(5deg); }
   .h2 { left: -130px; top: 250px; transform: rotate(-5deg); }
   .h3 { right: -130px; top: 500px; transform: rotate(3deg); }
   .h4 { left: -130px; bottom: -50px; transform: rotate(-8deg); }
 
-  /* Spaced out flowers */
   .f1 { left: -60px; top: -40px; }
-  .f2 { right: -50px; top: 120px; }
+  .f2 { right: -50px; top: 150px; }
   .f3 { left: -40px; bottom: 100px; }
 
-  /* MOBILE FIX - Stops overlapping and fixes font size */
+  /* MOBILE FIX - FORCED SPACING */
   @media (max-width: 768px) {
     .handmade-letter { width: 85%; padding: 30px 20px; font-size: 1rem; }
     
-    /* Photos move in so they are visible */
-    .h1 { right: -20px; top: -30px; width: 110px; }
-    .h2 { left: -20px; top: 200px; width: 110px; }
-    .h3 { right: -20px; top: 450px; width: 110px; }
-    .h4 { left: -20px; bottom: -20px; width: 110px; }
+    .h1 { right: -15px; top: -40px; width: 100px; }
+    .h2 { left: -15px; top: 220px; width: 100px; }
+    .h3 { right: -15px; top: 480px; width: 100px; }
+    .h4 { left: -15px; bottom: -30px; width: 100px; }
 
-    /* Flowers Spaced Out on Mobile (NO CLUSTERING) */
-    .f1 { left: -10px; top: -50px; width: 80px; }
-    .f2 { right: -10px; top: 150px; width: 80px; }
-    .f3 { left: -15px; bottom: 50px; width: 80px; }
+    /* Forced spacing for flowers so they cannot overlap */
+    .f1 { left: -10px; top: -60px; width: 70px; transform: rotate(-15deg); }
+    .f2 { right: -10px; top: 120px; width: 70px; transform: rotate(20deg); } 
+    .f3 { left: -10px; bottom: 120px; width: 70px; transform: rotate(-10deg); }
+    /* Added a 4th flower position just in case you have one */
+    .f4 { right: -10px; bottom: -40px; width: 70px; }
   }
 </style>
 </head>
