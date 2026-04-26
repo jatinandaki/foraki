@@ -5,122 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Aki</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Indie+Flower&family=La+Belle+Aurore&display=swap');
+  body {
+    background-color: #fce4ec; /* Soft pink */
+    margin: 0;
+    padding: 0;
+    display: flex; /* This centers everything */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+  }
 
-body {
-  margin: 0;
-  background-color: #ffd1dc;
-  font-family: 'Courier Prime', monospace;
-  overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-.scroll-wrapper {
-  padding: 80px 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.scatter-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  display: flex;
-  justify-content: center;
-}
-
-/* Messy Items Common Styles */
-.fl, .her {
-  position: absolute;
-  height: auto;
-  pointer-events: none;
-  z-index: 20;
-}
-
-.fl { width: 110px; filter: drop-shadow(4px 4px 10px rgba(0,0,0,0.08)); }
-.her { width: 155px; filter: drop-shadow(8px 10px 15px rgba(0,0,0,0.15)); }
-
-/* --- THE MESSY SCATTER (Manual Positioning) --- */
-
-/* Left side elements */
-.f1  { top: -40px; left: -80px; transform: rotate(-15deg); }
-.f3  { top: 250px; left: -100px; transform: rotate(25deg); }
-.h2  { top: 400px; left: -130px; transform: rotate(-10deg); } /* Photo 2 */
-.f5  { top: 600px; left: -70px; transform: rotate(-12deg); }
-.h4  { bottom: 50px; left: -120px; transform: rotate(-15deg); } /* Photo 4 */
-.f7  { bottom: -30px; left: -40px; transform: rotate(10deg); }
-.f9  { top: 850px; left: -90px; transform: rotate(-20deg); }
-.f11 { top: 200px; left: 40%; opacity: 0.15; z-index: 0; }
-
-/* Right side elements */
-.h1  { top: 40px; right: -130px; transform: rotate(12deg); } /* Photo 1 */
-.f2  { top: 180px; right: -80px; transform: rotate(-10deg); }
-.f4  { top: 450px; right: -60px; transform: rotate(15deg); }
-.h3  { top: 700px; right: -140px; transform: rotate(8deg); } /* Photo 3 */
-.f6  { top: 950px; right: -90px; transform: rotate(-5deg); }
-.f8  { bottom: 150px; right: -110px; transform: rotate(20deg); }
-.f10 { top: 1100px; right: -50px; transform: rotate(-15deg); }
-.f12 { bottom: 300px; right: 30%; opacity: 0.15; z-index: 0; }
-
-/* The Letter Styling */
-.handmade-letter {
-  position: relative;
-  z-index: 10;
-  width: 88%;
-  background: white;
-  border: 1px solid #444;
-  padding: 50px 35px;
-  box-shadow: 15px 15px 0px rgba(0,0,0,0.05);
-}
-
-.hero-name { 
-  font-family: 'La Belle Aurore', cursive; 
-  font-size: 2.2rem;
-  color: #d11d53;
-  margin-bottom: 25px;
-}
-
-.letter-body {
-  line-height: 1.8;
-  color: #333;
-  font-size: 1.05rem;
-  white-space: pre-wrap;
-}
-
-.signature-block { text-align: right; margin-top: 50px; }
-.signature { font-family: 'Indie Flower', cursive; font-size: 1.5rem; color: #d11d53; }
-
-/* iPhone 13 / Mobile Responsive Adjustments */
-@media (max-width: 600px) {
   .scroll-wrapper {
-    padding: 40px 0; /* Less top space on mobile */
+    position: relative;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
-  .handmade-letter { 
-    width: 90%; 
-    padding: 30px 20px; 
-    font-size: 0.9rem; /* Smaller text so it fits better */
+  .handmade-letter {
+    background: #fff;
+    padding: 50px 40px;
+    width: 90%;
+    max-width: 600px; /* Limits width on big screens */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+    border-radius: 2px;
   }
 
-  .her { width: 110px; } /* Smaller photos for mobile */
-  .fl { width: 70px; }  /* Smaller flowers for mobile */
+  /* These are your photos/flowers - we will keep them simple */
+  .her, .fl { position: absolute; z-index: 3; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .her { width: 150px; }
+  .fl { width: 100px; border: none; box-shadow: none; }
+
+  /* Desktop positions (The original "messy" look) */
+  .h1 { right: -130px; top: -20px; transform: rotate(5deg); }
+  .h2 { left: -130px; top: 250px; transform: rotate(-5deg); }
+  .h3 { right: -130px; top: 500px; transform: rotate(3deg); }
   
-  /* Pushing photos inward so they don't cut off the screen */
-  .h1 { right: -15px; top: 40px; }
-  .h2 { left: -15px; top: 280px; }
-  .h3 { right: -15px; top: 550px; }
-  .h4 { left: -15px; bottom: 40px; }
-
-  /* Adjusting flowers so they stay near the edges but visible */
-  .f1 { left: 0px; top: -20px; }
-  .f2 { right: 0px; }
-  .f3 { left: -10px; }
-  .f4 { right: -10px; }
-}
-    </style>
+  /* Mobile Fix: This ONLY triggers on phones */
+  @media (max-width: 800px) {
+    .scroll-wrapper { padding: 50px 10px; }
+    .her, .fl { 
+      position: static; /* This pulls them out of the margins */
+      display: block;
+      margin: 20px auto; /* Centers them above/below the letter */
+      width: 80%; 
+      max-width: 250px;
+      transform: rotate(0deg); 
+    }
+    .handmade-letter { width: 100%; padding: 30px 20px; }
+  }
+</style>
 </head>
 <!DOCTYPE html>
 <html lang="en">
