@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Aki</title>
-   <style>
+  <style>
   body {
-    background-color: #fce4ec; /* Your original pink */
+    background-color: #fce4ec;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden; /* This stops the phone from wobbling left to right */
+    overflow-x: hidden;
   }
 
   .scroll-wrapper {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Keeps the letter centered */
+    max-width: 600px;
     margin: 100px auto;
     padding: 20px;
   }
@@ -30,40 +30,53 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: relative;
     z-index: 2;
+    /* Font Fix */
+    font-family: 'Georgia', serif; 
+    font-size: 1.2rem;
+    line-height: 1.6;
   }
 
-  /* The "Messy" Photo Style */
+  /* The Photos - NO white boxes/borders */
   .her { 
     position: absolute; 
     width: 150px; 
     z-index: 3; 
-    border: 5px solid #fff; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    border: none !important; 
+    box-shadow: none !important; 
   }
 
-  /* The "Messy" Flower Style */
+  /* The Flowers - No overlapping */
   .fl { 
     position: absolute; 
     width: 100px; 
     z-index: 4; 
   }
 
-  /* Back to Original Positions */
+  /* Original Messy Desktop Positions */
   .h1 { right: -130px; top: -20px; transform: rotate(5deg); }
   .h2 { left: -130px; top: 250px; transform: rotate(-5deg); }
   .h3 { right: -130px; top: 500px; transform: rotate(3deg); }
   .h4 { left: -130px; bottom: -50px; transform: rotate(-8deg); }
 
-  /* Flower Positions */
-  .f1 { left: -50px; top: -30px; }
-  .f2 { right: -40px; top: 150px; }
-  /* Add more if you had them */
+  .f1 { left: -60px; top: -40px; }
+  .f2 { right: -50px; top: 150px; }
 
-  /* Simple Mobile Fix that doesn't ruin the messiness */
+  /* PERFECT MOBILE VIEW */
   @media (max-width: 600px) {
-    .h1, .h3 { right: -20px; } /* Pulls them in just enough to see them */
-    .h2, .h4 { left: -20px; }  /* Pulls them in just enough to see them */
-    .handmade-letter { padding: 30px 20px; width: 85%; margin: 0 auto; }
+    .handmade-letter { 
+      width: 85%; 
+      padding: 30px 20px; 
+      margin: 0 auto;
+      font-size: 1.1rem; 
+    }
+    
+    /* Pulls photos in to overlap edge but stay visible */
+    .h1, .h3 { right: -25px; width: 120px; }
+    .h2, .h4 { left: -25px; width: 120px; }
+
+    /* Space flowers out so they don't bunch up */
+    .f1 { left: -10px; top: -40px; }
+    .f2 { right: -10px; top: 200px; } 
   }
 </style>
 </head>
