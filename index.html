@@ -32,7 +32,7 @@
     width: 90%;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     position: relative;
-    z-index: 2;
+    z-index: 5; /* Increased this to ensure it stays ABOVE the big flowers */
     font-family: 'Courier Prime', monospace;
     font-size: 1.1rem;
     line-height: 1.8;
@@ -43,16 +43,18 @@
   .her { 
     position: absolute; 
     width: 150px; 
-    z-index: 3; 
+    z-index: 6; /* Photos on top of everything */
     border: none !important; 
     box-shadow: none !important; 
   }
 
+  /* FLOWERS - SIZE INCREASED */
   .fl { 
     position: absolute; 
-    width: 80px; /* Slightly smaller to fit 12 easily */
-    z-index: 1; /* Behind the letter */
+    width: 180px; /* Much larger than before */
+    z-index: 1; /* Keep them BEHIND the letter so they don't block text */
     pointer-events: none;
+    opacity: 0.9; /* Slight transparency looks better for large background flowers */
   }
 
   /* Desktop Positions for Photos */
@@ -61,7 +63,7 @@
   .h3 { right: -130px; top: 500px; transform: rotate(3deg); }
   .h4 { left: -130px; bottom: -50px; transform: rotate(-8deg); }
 
-  /* SCATTERING ALL 12 FLOWERS (Desktop) */
+  /* 12 Flowers - Same positions, just appearing larger */
   .f1 { left: -80px; top: -50px; transform: rotate(10deg); }
   .f2 { right: -70px; top: 50px; transform: rotate(-15deg); }
   .f3 { left: -100px; top: 150px; transform: rotate(20deg); }
@@ -75,26 +77,28 @@
   .f11 { left: -80px; bottom: 0px; transform: rotate(10deg); }
   .f12 { right: -90px; bottom: -40px; transform: rotate(-20deg); }
 
-  /* MOBILE FIX - Keeps all 12 visible and separate */
+  /* MOBILE FIX */
   @media (max-width: 600px) {
     .handmade-letter { width: 85%; padding: 30px 20px; }
     
-    .h1, .h3 { right: -10px; width: 100px; }
-    .h2, .h4 { left: -10px; width: 100px; }
+    .h1, .h3 { right: -10px; width: 110px; }
+    .h2, .h4 { left: -10px; width: 110px; }
 
-    /* Moving flowers to the very edges on mobile so they stay scattered */
-    .f1 { left: -15px; top: -60px; width: 60px; }
-    .f2 { right: -15px; top: 80px; width: 60px; }
-    .f3 { left: -20px; top: 200px; width: 60px; }
-    .f4 { right: -20px; top: 320px; width: 60px; }
-    .f5 { left: -15px; top: 440px; width: 60px; }
-    .f6 { right: -15px; top: 560px; width: 60px; }
-    .f7 { left: -20px; top: 680px; width: 60px; }
-    .f8 { right: -20px; top: 800px; width: 60px; }
-    .f9 { left: -15px; top: 920px; width: 60px; }
-    .f10 { right: -15px; top: 1040px; width: 60px; }
-    .f11 { left: -20px; bottom: 40px; width: 60px; }
-    .f12 { right: -20px; bottom: -20px; width: 60px; }
+    /* Flowers also larger on mobile but tucked to the edges */
+    .fl { width: 130px; } /* Increased from 60px to 130px */
+
+    .f1 { left: -30px; top: -60px; }
+    .f2 { right: -30px; top: 80px; }
+    .f3 { left: -30px; top: 200px; }
+    .f4 { right: -30px; top: 320px; }
+    .f5 { left: -30px; top: 440px; }
+    .f6 { right: -30px; top: 560px; }
+    .f7 { left: -30px; top: 680px; }
+    .f8 { right: -30px; top: 800px; }
+    .f9 { left: -30px; top: 920px; }
+    .f10 { right: -30px; top: 1040px; }
+    .f11 { left: -30px; bottom: 40px; }
+    .f12 { right: -30px; bottom: -20px; }
   }
 </style>
 </head>
