@@ -5,99 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For Aki</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
-
-  body {
-    background-color: #fce4ec;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    overflow-x: hidden;
-  }
-
-  .scroll-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 100px auto;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-  }
+  /* ... keep your font import at the top ... */
 
   .handmade-letter {
-    background: #fff;
-    padding: 40px;
-    width: 90%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* ... keep your other settings ... */
     position: relative;
-    z-index: 10; /* Keeps letter above everything */
-    font-family: 'Courier Prime', monospace;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #4a4a4a;
+    z-index: 5; /* The "Island" layer */
+  }
+
+  .fl { 
+    position: absolute; 
+    width: 150px; 
+    z-index: 2; /* Flowers are now on a LOWER layer */
+    pointer-events: none;
   }
 
   .her { 
     position: absolute; 
     width: 150px; 
-    z-index: 11; 
+    z-index: 10; /* Photos are now on the HIGHEST layer */
     border: none !important; 
+    box-shadow: none !important;
   }
 
-  .fl { 
-    position: absolute; 
-    width: 150px; /* Big flowers */
-    z-index: 5; /* Scattered around, not underneath */
-    pointer-events: none;
-  }
-
-  /* Desktop Positions */
-  .h1 { right: -140px; top: -20px; transform: rotate(5deg); }
-  .h2 { left: -140px; top: 250px; transform: rotate(-5deg); }
-  .h3 { right: -140px; top: 500px; transform: rotate(3deg); }
-  .h4 { left: -140px; bottom: -50px; transform: rotate(-8deg); }
-
-  .f1 { left: -100px; top: -80px; }
-  .f2 { right: -100px; top: 60px; }
-  .f3 { left: -120px; top: 200px; }
-  .f4 { right: -120px; top: 350px; }
-  /* ... (rest of f5-f12 for desktop) */
-
-  /* THE "ISLAND" MOBILE FIX */
+  /* MOBILE POSITIONS */
   @media (max-width: 600px) {
-    .scroll-wrapper {
-      padding: 100px 10px; /* Extra space at top/bottom for flowers */
-    }
-
     .handmade-letter { 
-      width: 65%; /* Zoomed out effect: letter is now an island */
-      padding: 25px 15px; 
-      font-size: 0.85rem; /* Smaller text to fit the island */
-      margin: 0 auto;
+      width: 65%; 
+      z-index: 5; 
     }
 
-    /* Flowers scattered around the island (NOT underneath) */
-    .fl { width: 80px; z-index: 12; }
-
-    .f1 { left: 0px; top: -60px; }
-    .f2 { right: 5px; top: -30px; }
-    .f3 { left: -15px; top: 120px; }
-    .f4 { right: -15px; top: 200px; }
-    .f5 { left: -20px; top: 350px; }
-    .f6 { right: -20px; top: 480px; }
-    .f7 { left: -15px; top: 620px; }
-    .f8 { right: -15px; top: 750px; }
-    .f9 { left: -5px; top: 880px; }
-    .f10 { right: -5px; top: 1000px; }
-    .f11 { left: 10px; bottom: -40px; }
-    .f12 { right: 10px; bottom: -60px; }
-
-    /* Photos of Her hugging the very edges */
-    .h1, .h3 { right: -15px; width: 90px; }
-    .h2, .h4 { left: -15px; width: 90px; }
+    /* This ensures that even if a flower and photo are in the same spot, 
+       the photo of her will ALWAYS be on top */
+    .her { z-index: 20; width: 90px; } 
+    .fl { z-index: 10; width: 80px; }
+    
+    /* ... keep your f1-f12 and h1-h4 positions ... */
   }
 </style>
 </head>
